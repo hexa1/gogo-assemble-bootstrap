@@ -1,0 +1,32 @@
+---
+site: dist
+s3_id:
+s3_secret:
+s3_bucket: mysite.com
+gzip:
+- .html
+- .css
+- .md
+- .js
+- .txt
+- .xml
+- .json
+- .pdf
+exclude_from_upload:
+- .DS_Store
+- .htaccess
+- .git
+- .gitignore
+- .php
+- next.webcloc
+cloudfront_distribution_config:
+  default_cache_behavior:
+    min_TTL: 86400
+  aliases:
+    quantity: 1
+    items:
+      CNAME: mysite.com
+index_document: index.html
+error_document: not-found/index.html
+extensionless_mime_type: text/html
+cloudfront_distribution_id: E2LUS8YMLN4AMY

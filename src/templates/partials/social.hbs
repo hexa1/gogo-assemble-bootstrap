@@ -1,0 +1,52 @@
+---
+component: social
+---
+<div class="social-wrapper">
+<ul>
+
+{{#compare social.github 'neq' '#'}}
+  <li>
+    <a target="_blank" href="{{social.github}}" class="fa fa-github tooltip-hover" data-placement="left" title="Visit our GitHub Page"></a>
+  </li>
+{{/compare}}
+
+{{#compare social.linkedin 'neq' '#'}}
+  <li>
+    <a target="_blank" href="{{social.linkedin}}" class="fa fa-linkedin tooltip-hover" data-placement="left" title="Follow Us on LinkedIn"></a>
+  </li>
+{{/compare}}
+
+{{#compare social.facebook 'neq' '#'}}
+  <li>
+    <a target="_blank" href="{{social.facebook}}" class="fa fa-facebook tooltip-hover" data-placement="left" title="Follow Us on Facebook"></a>
+  </li>
+{{/compare}}
+
+{{#compare social.twitter 'neq' '#'}}
+  <li>
+    <a target="_blank" href="{{social.twitter}}" class="fa fa-twitter tooltip-hover" data-placement="left" title="Follow Us on Twitter"></a>
+  </li>
+{{/compare}}
+
+{{#compare social.googleplus 'neq' '#'  }}
+  <li>
+    <a target="_blank" href="{{social.googleplus}}" class="fa fa-google-plus tooltip-hover" data-placement="left" title="Follow Us on Google Plus"></a>
+  </li>
+{{/compare}}
+
+{{#compare social.instagram 'neq' '#'}}
+  <li>
+    <a target="_blank" href="{{social.instagram}}" class="fa fa-instagram tooltip-hover" data-placement="left" title="Follow Us on Instagram"></a>
+  </li>
+{{/compare}}
+
+{{#compare social.rss 'neq' '#'}}
+  <li>
+    <a target="_blank" href="{{social.rss}}" class="fa fa-rss tooltip-hover" data-placement="left" title="Subscribe to Our RSS Feed"></a>
+  </li>
+{{/compare}}
+
+
+</ul>
+<!-- .social -->
+</div>

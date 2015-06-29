@@ -1,0 +1,99 @@
+---
+layout: default.hbs
+---
+
+ <h1 class="font-weight-thin no-margin-top">{{ title }}</h1>
+   <hr class="hidden-xs">
+
+
+  <p class="meta">
+    author <strong>{{#if author}}{{author}}{{else}}{{site.author}}{{/if}}</strong>  / posted <strong>{{formatDate posted "%B %d, %Y"}}</strong>
+    {{#if page.categories}} / Category
+      {{#page.categories }}
+        <strong><a href="#" class="text-underline">{{. }}</a></strong>
+      {{/page.categories }}
+    {{/if}}
+  </p>
+
+  <hr class="hidden-xs">
+
+  <!-- this is hidden at small sizes and is found on the top of the content -->
+  <h6 class="visible-xs-inline-block no-margin-top no-margin-bottom uppercase">Share: &nbsp;</h6>
+  <ul class="list-inline visible-xs-inline-block">
+   <li><a href="#" class="fa fa-facebook tooltip-hover" data-placement="top" title="Share on Facebook"></a></li>
+   <li><a href="#" class="fa fa-google-plus tooltip-hover" data-placement="top" title="Share on Google Plus"></a></li>
+   <li><a href="#" class="fa fa-twitter tooltip-hover" data-placement="top" title="Share on Twitter"></a></li>
+   <li><a href="#" class="fa fa-linkedin tooltip-hover" data-placement="top" title="Share on Linkedin"></a></li>
+   <!--
+   <li><a href="#" class="fa fa-instagram tooltip-hover" data-placement="top" title="Share on Instagram"></a></li>-->
+  </ul>
+
+  <hr class="visible-xs">
+
+  <div class="row">
+   <article class="col-sm-9 clearfix">
+
+      {{> body }}
+
+   </article>
+   <!--/.col-sm-8 -->
+
+   <hr class="vertical-spacer visible-xs">
+   <aside class="col-sm-3">
+
+    <!-- this is hidden at small sizes and is found on the top of the content -->
+    <!--
+    <h6 class="hidden-xs">Share</h6>
+    <ul class="list-inline hidden-xs">
+     <li><a href="#" class="fa fa-facebook tooltip-hover" data-placement="top" title="Share on Facebook"></a></li>
+     <li><a href="#" class="fa fa-google-plus tooltip-hover" data-placement="top" title="Share on Google Plus"></a></li>
+     <li><a href="#" class="fa fa-twitter tooltip-hover" data-placement="top" title="Share on Twitter"></a></li>
+     <li><a href="#" class="fa fa-linkedin tooltip-hover" data-placement="top" title="Share on Linkedin"></a></li>
+     -->
+     <!--
+     <li><a href="#" class="fa fa-instagram tooltip-hover" data-placement="top" title="Share on Instagram"></a></li>-->
+    </ul>
+
+    <!--
+    <hr class="vertical-spacer visible-xs">
+    {{#if page.tags}}
+    <section class="tags">
+      <h6 class="spaced-out-header uppercase display-inline-block">Tags</h6>
+      {{#page.tags }}
+        <a href="#" class="label label-default">{{. }}</a>
+      {{/page.tags }}
+    </section>
+    {{/if}}
+    -->
+
+    <hr class="vertical-spacer">
+
+    {{#if related}}
+    <div class="well well-sm">
+      <h6>Related Articles</h6>
+      <ul class="list-unstyled">
+        {{#each related}}
+          <li><a href="/{{slug}}/">{{name}}</a></li>
+        {{/each}}
+      </ul>
+    </div>
+    {{/if}}
+
+    {{#if links}}
+    <div class="well well-sm">
+      <h6>Links &amp; Resources</h6>
+      <ul class="list-unstyled">
+        {{#each links}}
+        <li><a target="_blank" href="{{href}}">{{name}}</a></li>
+        {{/each}}
+        {{#eachIndex page.technologies}}
+        <li><a target="_blank" href="{{load ../tech this.item 'site'}}">{{load ../tech this.item 'name'}}</a></li>
+        {{/eachIndex}}
+      </ul>
+    </div>
+    {{/if}}
+   </aside>
+   <!--/.col-sm-4-->
+
+  </div>
+  <!-- /.row -->

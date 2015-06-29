@@ -1,0 +1,19 @@
+---
+component: menu
+---
+<ul class="primary-nav">
+  <li{{#is basename "index"}} class="active"{{/is}}><a href="/">Home</a></li>
+  <!--
+  <li class="has-children active"><a href="#">Parent</a>
+    <ul>
+      <li><a href="/child1.html">Child 1</a></li>
+      <li><a href="/child2.html">Child 2</a></li>
+      <li><a href="/child3.html">Child 3</a></li>
+    </ul>
+  </li>
+  -->
+  <li{{#is basename "page1"}} class="active"{{/is}}><a href="/page1/">page1</a></li>
+  <li{{#is basename "page2"}} class="active"{{/is}}><a href="/page2/">page2</a></li>
+  <li{{#is basename "page3"}} class="active"{{/is}}><a href="/page3/">page3</a></li>
+  <li{{#is basename "page4"}} class="active"{{/is}}><a href="/page4/">page4</a></li>
+</ul>

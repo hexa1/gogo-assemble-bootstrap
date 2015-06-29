@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>{{title}}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="Description" content="{{description}}" />
+  <!-- open graph -->
+  <meta property="og:title" content="{{title}}" />
+  <meta property="og:site_name" content="{{site.name}}" />
+  <!-- <meta property="og:url" content="" /> -->
+  <meta property="og:type" content="website" />
+  <meta property="og:description" content="{{description}}" />
+  <!-- <meta property="og:image" content="" /> -->
+  <!-- twitter card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@{{social.twitterUser}}" />
+  <meta name="twitter:title" content="{{title}}" />
+  <meta name="twitter:description" content="{{description}}" />
+  <!-- <meta property="og:url" content="" /> -->
+  {{#if image}}
+  <meta name="twitter:image" content="{{image}}" />
+  {{/if}}
+  <link rel="shortcut icon" href="{{assets}}/images/favicon.png">
+  <!-- build:css {{assets}}/css/style.min.css -->
+  <link href="{{assets}}/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="{{assets}}/css/custom.css" rel="stylesheet" type="text/css">
+  <!-- /build -->
+  <!-- google analytics -->
+  {{> google-analytics }}
+  <!-- schema.org structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "url": "{{site.url}}",
+    "logo": "{{site.logo}}",
+    "contactPoint" : [{
+      "@type" : "ContactPoint",
+      "telephone" : "{{contact.telephone}}",
+      "contactType" : "customer service"
+    }],
+    "sameAs" : [
+      {{#sameAs}}
+      {{#compare social.twitter 'neq' '#'}}"{{social.twitter}}",{{/compare}}
+      {{#compare social.googleplus 'neq' '#'}}"{{social.googleplus}}",{{/compare}}
+      {{#compare social.facebook 'neq' '#'}}"{{social.facebook}}",{{/compare}}
+      {{#compare social.github 'neq' '#'}}"{{social.github}}",{{/compare}}
+      {{#compare social.linkedin 'neq' '#'}}"{{social.linkedin}}",{{/compare}}
+      {{#compare social.instagram 'neq' '#'}}"{{social.instagram}}",{{/compare}}
+      {{/sameAs}}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context" : "http://schema.org",
+    "@type" : "WebSite",
+    "name" : "{{site.company}}",
+    "alternateName" : "{{site.name}}",
+    "url" : "{{site.url}}"
+  }
+  </script>
+</head>
+<body>
+  <!-- header -->
+  <header>
+    <a href="/"><img id="logo" src="{{site.logoUri}}" alt="{{site.name}}"></a>
+    <nav role="navigation">
+      {{> menu}}
+    </nav>
+  </header>
+  <!-- main content area -->
+  <section>
+    {{> body}}
+  </section>
+  <!-- footer -->
+  <footer>
+    <!-- todo: move into partial -->
+    <p>
+      © copyright {{now "%Y"}} {{site.company}}. all rights reserved.&nbsp;&nbsp;
+      <a href="/terms/">Terms of Use</a>&nbsp;&nbsp;
+      |
+      &nbsp;&nbsp;
+      <a href="/privacy/">Privacy Policy</a>
+    </p>
+  </footer>
+  <!-- scripts -->
+  <!--[if gt IE 8]><!-->
+  <script src="{{assets}}/js/jquery/jquery.min.2.0.3.js"></script>
+  <!--<![endif]-->
+  <!--[if lt IE 9]>
+  <script src="{{assets}}/js/jquery/1.9.1-jquery.min.js"></script>
+  <script type="text/javascript" src="{{assets}}/js/selectivizr.js"></script>
+  <![endif]-->
+  <!--build:js {{assets}}/js/site.min.js -->
+  <script src="{{assets}}/js/active/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+  <!-- WINDOWS 8 Phones BUG FIX -->
+  <script src="{{assets}}/js/active/bootstrap.min.js"></script>
+  <script src="{{assets}}/js/active/site.js"></script>
+  <!-- /build -->
+</body>
+</html>

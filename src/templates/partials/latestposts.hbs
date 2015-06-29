@@ -1,0 +1,18 @@
+---
+component: latestposts
+---
+
+<div class="footer-content-4">
+  <div class="inner-content">
+    <h5>Latest Posts</h5>
+    <ul class="article-list">
+      {{#withSort post 'data.posted'}}
+      {{#each this.pages }}
+        <li>
+        <a href="{{ replaceStr this.dest 'dist' '' }}">{{ this.data.title }}</a>
+        </li>
+      {{/each}}
+      {{/withSort}}
+    </ul>
+  </div>
+</div>
