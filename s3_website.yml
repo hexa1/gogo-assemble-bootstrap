@@ -29,4 +29,4 @@ cloudfront_distribution_config:
 index_document: index.html
 error_document: not-found/index.html
 extensionless_mime_type: text/html
-cloudfront_distribution_id: E2LUS8YMLN4AMY
+cloudfront_distribution_id:
