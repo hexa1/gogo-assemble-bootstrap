@@ -22,6 +22,7 @@ To DO
 - Introduce an Markdown blog page, as well as jade
 - Elaborate on the build process
 - Fix: feed.xml urls
+- not-found.html -> error404.html, also change in s3_website
 - Create some content for the notes section
 - Fix sizes of technology icons
 - Build # for cache invalidation
