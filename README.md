@@ -39,6 +39,10 @@
 - Feed (rss) generation (auto)
 - One .css and one .js file for entire site
 - (TODO) Cache busting via filename id
+- autoreload when assets/pages/posts/styles changes
+- (TODO) autorecompile Bootstrap (LESS)
+- (TODO) Jade Bootstrap partials
+- (TODO) Bootstrap handlebars templates
 
 ### To Do
 
@@ -83,6 +87,11 @@
 - Add Disqus comments
 - Add LinkedIn and other Social Profiles, RSS
 - structured data for articles: https://developers.google.com/structured-data/rich-snippets/articles
+- https://github.com/assemble/assemble-middleware-permalinks
+- Set up data structure
+- https://github.com/assemble/assemble-middleware-anchors
+- https://github.com/assemble/assemble-middleware-drafts
+
 
 ### Getting Started
 
@@ -93,30 +102,20 @@
 
 - Privacy and TOS generated from: http://www.bennadel.com/coldfusion/privacy-policy-generator.htm#primary-navigation
 
-Grunt tasks
-==================
+### Grunt tasks
 
 1. Production build: `./build.sh` or `grunt build:prod`
 2. Preview production site: `./preview-prod` or `grunt watch:prod`
 3. Live watch website + livereload in development: `./watch-dev.sh` or `grunt watch:dev`
 
-TODO Next
-=========
-
-- https://github.com/assemble/assemble-middleware-permalinks
-- Set up data structure
-- https://github.com/assemble/assemble-middleware-anchors
-- https://github.com/assemble/assemble-middleware-drafts
-
-Useful Links
-============
+### Useful Links
 
 - Template helpers: https://github.com/assemble/handlebars-helpers
 - https://github.com/assemble/boilerplates
 - http://gruntjs.com/getting-started
 - http://assemble.io/docs/External-Libraries.html   Handlebars and helpers, underscore
 
-## [Assemble](http://assemble.io/)
+### [Assemble](http://assemble.io/)
 
 * Documentation
 * Plugins - Plugins extend the core functionality of Assemble.
