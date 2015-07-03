@@ -9,6 +9,7 @@ To DO
 - Drop in clean bootstrap (full), latest, including LESS source
 - Add build targets for compiling Bootstrap, watch it
 - Build a simple website, break up template into partials
+- Introduce grunt-rev and grunt-usemin: https://github.com/cbas/grunt-rev (usemin already in use? first, just try grunr-rev of filerev)
 - Create sample templates and pages
 - Re-organize Assemble with different subtargets for blogs, site pages, etc...
 - Drop in free bootstrap themes
@@ -18,6 +19,7 @@ To DO
 - Move menu to menu.json
 - Do first commit
 - Add tags and categories to blog
+- Explore and use the helpers: http://assemble.io/helpers/
 - Move seo stuff to seo.json
 - Introduce an Markdown blog page, as well as jade
 - Elaborate on the build process

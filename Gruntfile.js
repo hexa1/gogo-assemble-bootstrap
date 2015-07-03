@@ -16,6 +16,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-compress');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
+  grunt.loadNpmTasks('grunt-text-replace');
   grunt.loadNpmTasks('grunt-uncss');
 
   var mozjpeg = require('imagemin-mozjpeg');
@@ -150,6 +151,14 @@ module.exports = function(grunt) {
     },
     assemble: {
       options: {
+        sitemap: {
+            //homepage: 'http://mysite.com',
+            changefreq: 'daily',
+            priority: '0.8',
+            //exclude: ['50x', 'foo'],
+            robot: false,
+            relativedest: true
+        },
         permalinks: {
           structure: ':basename/index.html'
         },
@@ -171,7 +180,13 @@ module.exports = function(grunt) {
         data: '<%= config.src %>/data/*.{json,yml}',
         partials: '<%= config.src %>/templates/partials/*.hbs',
         //'assemble-middleware-sitemap',
-        plugins: ['assemble-middleware-rss', 'assemble-contrib-anchors','assemble-contrib-permalinks','assemble-contrib-sitemap','assemble-contrib-toc'],
+        plugins: [
+          'assemble-middleware-sitemap',
+          'assemble-middleware-rss',
+          'assemble-contrib-anchors',
+          'assemble-contrib-permalinks',
+          'assemble-contrib-toc'
+        ],
         helpers: ['<%= config.src %>/helpers/**/*.js']
       },
       site: {
@@ -180,7 +195,24 @@ module.exports = function(grunt) {
         }
       },
     },
-    // TODO: Make this work
+    replace: {
+      feed: {
+        src: ['<%= config.dist %>/feed.xml'],             // source files array (supports minimatch)
+        dest: '<%= config.dist %>/feed.xml',             // destination directory or file
+        replacements: [{
+          from: 'index.html',                   // string replacement
+          to: ''
+        }]
+      },
+      sitemap: {
+        src: ['<%= config.dist %>/sitemap.xml'],             // source files array (supports minimatch)
+        dest: '<%= config.dist %>/sitemap.xml',             // destination directory or file
+        replacements: [{
+          from: 'index.html',                   // string replacement
+          to: ''
+        }]
+      }
+    },
     uncss: {
       dist: {
         files: [
@@ -243,7 +275,8 @@ module.exports = function(grunt) {
     'clean:dev',
     'copy',
     'stylus',
-    'assemble'
+    'assemble',
+    'replace'
   ]);
 
   grunt.registerTask('build:prod', [
@@ -257,6 +290,7 @@ module.exports = function(grunt) {
     'htmlmin',
     'uglify',
     'imagemin',
+    'replace',
     'compress'
   ]);
 
