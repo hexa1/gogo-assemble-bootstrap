@@ -2,8 +2,45 @@
 
 ### WIP: no release
 
-To DO
-=====
+### Features
+
+- HTML5 base template
+- HTML5 structures (header, footer, aside, article, section)
+- jQuery (latest)
+- jQuery for > IE 8 selection
+- Modernizr.js shims
+- Bootstrap (latest)
+- Pretty urls (domain.com/page-basename/)
+- Canonical link rel
+- Open Graph tags
+- Twitter Card tags
+- Description meta tags
+- Google analytics
+- Schema.org stuctured data via ld+json
+- Social media integration (Twitter, Github, Google+, LinkedIn, Instagram, Facebook)
+- Privacy Policy (generic)
+- Terms of Service (generic)
+- (TODO) LESS auto-compile
+- Stylus auto-compile
+- 100+ Handlebars helpers
+- Sample helpers
+- Blog setup with sample posts
+- Template elements broken into partials
+- s3_website sample for uploading to AWS S3 + CloudFront
+- Utility scripts for building and livewatching
+- Grunt build pipeline
+- Image minification and optimization
+- Javascript compression
+- HTML minification
+- CSS minification
+- CSS optimization (remove unreferenced selectors)
+- Livereload
+- Sitemap generation (auto)
+- Feed (rss) generation (auto)
+- One .css and one .js file for entire site
+- (TODO) Cache busting via filename id
+
+### To Do
 
 - Upgrade assemble and grunt, reinstall everything
 - Drop in clean bootstrap (full), latest, including LESS source
