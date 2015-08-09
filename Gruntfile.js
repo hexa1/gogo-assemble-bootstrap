@@ -10,6 +10,7 @@ module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt);
 
   grunt.loadNpmTasks('assemble');
+  grunt.loadNpmTasks('grunt-newer');
   grunt.loadNpmTasks('grunt-contrib-stylus');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
@@ -275,7 +276,7 @@ module.exports = function(grunt) {
     'clean:dev',
     'copy',
     'stylus',
-    'assemble',
+    'assemble', //'newer:assemble',
     'replace'
   ]);
 
@@ -283,7 +284,7 @@ module.exports = function(grunt) {
     'clean:prod',
     'copy',
     'stylus',
-    'assemble',
+    'assemble', //'newer:assemble',
     'uncss',
     'cssmin',
     'processhtml',

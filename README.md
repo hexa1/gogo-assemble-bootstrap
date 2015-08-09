@@ -46,6 +46,9 @@
 
 ### To Do
 
+- assemble-contrib-markdown
+- newer: https://github.com/tschaub/grunt-newer
+- https://pages.github.com/
 - Upgrade assemble and grunt, reinstall everything
 - Drop in clean bootstrap (full), latest, including LESS source
 - Add build targets for compiling Bootstrap, watch it
